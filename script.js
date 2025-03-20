@@ -57,7 +57,7 @@ function openBin() {
     }
 }
 
-// **修正垃圾不显示的问题**
+// 显示垃圾选项
 function displayTrashItems() {
     trashItemsContainer.style.display = "flex"; // 显示垃圾
     trashItemsContainer.innerHTML = ""; // 清空旧数据，防止重复
@@ -98,7 +98,7 @@ trashBin.addEventListener("drop", (e) => {
     if (item) processTrash(item);
 });
 
-// **修正垃圾投递后消失的问题**
+// 处理垃圾投递
 function processTrash(item) {
     trashBin.src = "img/trash bin loading.png";
     analysisDiv.innerHTML = "";
@@ -111,7 +111,20 @@ function processTrash(item) {
 
     // 2秒后显示评估
     setTimeout(() => {
-        let newBinImage = `img/trash bin ${item.value}%.png`;
+        let newBinImage = "";
+        if (item.value === 1) {
+            newBinImage = "img/trash bin 1.png";
+        } else if (item.value === 25) {
+            newBinImage = "img/trash bin 25.png";
+        } else if (item.value === 75) {
+            newBinImage = "img/trash bin 75.png";
+        } else if (item.value === 100) {
+            newBinImage = "img/trash bin 100.png";
+        } else {
+            newBinImage = "img/trash bin open.png";
+        }
+
+        // 更新垃圾桶图像
         trashBin.src = newBinImage;
 
         // 显示垃圾评估信息
