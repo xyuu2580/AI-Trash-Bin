@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Computer Trash Bin</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Trash Bin</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Title and subtitle -->
-  <header id="title-area">
-    <h1>This is a Computer Trash Bin</h1>
-    <p class="subtitle">As the name suggests, this is a combination of a computer and a trash bin that will evaluate the value of the trash you throw in.</p>
-  </header>
 
-  <!-- Main container with left (bin and trash) and right (analysis) sections -->
-  <div class="container">
-    <!-- Left section: Trash bin and items -->
-    <div class="left-section">
-      <div id="trash-bin-container">
-        <!-- Initially display trash bin closed -->
-        <img id="trash-bin" src="img/trash bin close.png" alt="Trash Bin">
-        <p id="bin-instruction">Click to open the trash bin</p>
-      </div>
-      <!-- Trash items container (hidden until bin is opened) -->
-      <div id="trash-items" class="trash-items" style="display: none;"></div>
-    </div>
-    <!-- Right section: Analysis text display -->
-    <div class="right-section">
-      <div id="analysis"></div>
-    </div>
-  </div>
+    <!-- 标题和说明 -->
+    <header id="title-area">
+        <h1>This is a Computer Trash Bin</h1>
+        <p class="subtitle">As the name suggests, this is a combination of a computer and a trash bin that will evaluate the value of the trash you throw in.</p>
+    </header>
 
-  <script src="script.js"></script>
+    <!-- 页面布局 -->
+    <div class="container">
+        <!-- 左侧：垃圾桶 -->
+        <div class="left-section">
+            <div id="trash-bin-container">
+                <img id="trash-bin" src="img/trash bin close.png" alt="Trash Bin">
+                <p id="bin-instruction">Click to open the trash bin</p>
+            </div>
+            <div id="trash-items" class="trash-items" style="display: none;"></div>
+        </div>
+
+        <!-- 右侧：分析文本 -->
+        <div class="right-section">
+            <div id="analysis"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
